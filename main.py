@@ -4,7 +4,7 @@ from sklearn.linear_model import LinearRegression
 import pandas as pd
 import time
 
-nba_player_stats = "data/nba_player_stats.csv"
+nba_player_stats = "data/all_nba_player_stats.csv"
 player_names = {"Lebron James",
                 "Stephen Curry",
                 "Kevin Durant",
@@ -18,6 +18,16 @@ player_names = {"Lebron James",
                 "Kyle Lowry",
                 "Russell Westbrook",
                 "Kyrie Irving",
+                "Luka Doncic",
+                "James Harden",
+                "Damian Lillard", 
+                "Jalen Brunson",
+                "Jimmy Butler",
+                "Trae Young",
+                "Jayson Tatum",
+                "Jaylen Brown",
+                "Lamelo Ball",
+                "Jamal Murray"                
                 }
 
 
@@ -51,7 +61,7 @@ def fetch_player_season_stats(player_name, season_type):
 
     return df
 
-def forecast_player_2025(player_name, stat_columns=['W','L','PTS', 'AST', 'REB']):
+def forecast_player_2025(player_name, stat_columns=['W','L','PTS', 'AST', 'REB', 'STL', 'BLK', 'FG_PCT', 'FG3_PCT', 'TOV']):
     df = pd.read_csv(nba_player_stats)
 
     player_df = df[df['PLAYER_NAME'] == player_name].copy()
