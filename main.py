@@ -4,7 +4,7 @@ from sklearn.linear_model import LinearRegression
 import pandas as pd
 import time
 
-nba_player_stats = "data/all_nba_player_stats.csv"
+nba_player_stats = "data/all_nba_player_stats.xlsx"
 player_names = {"Lebron James",
                 "Stephen Curry",
                 "Kevin Durant",
@@ -98,7 +98,7 @@ def forecast_player_2025(player_name, stat_columns=['W','L','PTS', 'AST', 'REB',
     output_df = output_df[cols]
 
     # Save to CSV
-    filename = "data/" + player_name.lower().replace(" ", "_") + "_forecast.csv"
+    filename = "data/" + player_name.lower().replace(" ", "_") + "_forecast.xlsx"
     output_df.to_csv(filename, index=False)
     print(f"✅ Forecast saved to {filename}")
  
